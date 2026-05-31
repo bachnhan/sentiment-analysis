@@ -1,0 +1,6 @@
+.env
+
+sentiment dataset/training.1600000.processed.noemoticon.csv
+sentiment dataset.zip
+__pycache__/
+*.pyc

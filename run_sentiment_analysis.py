@@ -338,9 +338,9 @@ def main():
     ))
 
     # -------------------------------------------------------------
-    # Part 5.1: Fine-tuned RoBERTa
+    # Part 5.1: RoBERTa (Twitter, zero-shot inference)
     # -------------------------------------------------------------
-    print("\n=== Part 5.1: Fine-tuned RoBERTa (Task-Specific LLM) ===")
+    print("\n=== Part 5.1: RoBERTa (Twitter, zero-shot inference) ===")
     from transformers import pipeline
 
     model_path = 'cardiffnlp/twitter-roberta-base-sentiment-latest'
@@ -399,7 +399,7 @@ def main():
 
     roberta_accuracy = accuracy_score(test_y, roberta_preds)
 
-    print('\n=== Fine-tuned RoBERTa Results ===')
+    print('\n=== RoBERTa (Twitter, zero-shot inference) Results ===')
     print(classification_report(
         test_y, roberta_preds,
         target_names=['Negative', 'Positive']
@@ -592,7 +592,7 @@ def main():
         'TF-IDF + Logistic Regression (Classical)': lr_classical_accuracy,
         'Sentence Embeddings + Logistic Reg':  lr_accuracy,
         'Flan-T5 (Generative, zero-shot)':     t5_accuracy,
-        'Fine-tuned RoBERTa (Twitter)':        roberta_accuracy,
+        'RoBERTa (Twitter, zero-shot inference)':        roberta_accuracy,
         'Gemini LLM (Zero-Shot)':              gemini_accuracy,
     }
 
